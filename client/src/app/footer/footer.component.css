@@ -1,0 +1,23 @@
+body {
+    height: 5vh;
+    text-align: center;
+    background-color: rgb(0, 0, 0 , 0.95) !important;
+    color: #dedede !important;
+    border-top: 0.4vh solid rgb(29, 29, 29);
+
+}
+
+div {
+    height: inherit;
+}
+
+div .container {
+    height: inherit;
+
+}
+.text > h5:nth-child(1){
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    top: 0.6rem;    
+}

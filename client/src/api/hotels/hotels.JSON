@@ -1,0 +1,14 @@
+[
+    { "id": 1, "name": "Atlantis", "place": "Palm Jumeira", "link": "../assets/images/1.jpg"},
+    { "id": 2, "name": "Burj Khalifa", "place": "Bur Dubai", "link": "../assets/images/2.jpg"},
+    { "id": 3, "name": "Burj Al Arab", "place": "Palm Beach", "link": "../assets/images/3.jpg"},
+    { "id": 4, "name": "Emirates Palace", "place": "Abu Dhabi", "link": "../assets/images/4.jpg"},
+    { "id": 5, "name": "Al Mahal", "place": "Murqquoab", "link": "../assets/images/5.jpg"},
+    { "id": 6, "name": "Le Royal Meridien", "place": "Dubai", "link": "../assets/images/6.JPG"},
+    { "id": 7, "name": "The Oberoi", "place": "Dubai", "link": "../assets/images/7.jpg"},
+    { "id": 8, "name": "Qasr Al Sahab", "place": "UAE", "link": "../assets/images/8.JPG"},
+    { "id": 9, "name": "Waldorf Astoria", "place": "Ras Al Khaima", "link": "../assets/images/9.jpg"},
+    { "id": 10, "name": "Al Etihad Towers", "place": "Jumeira", "link": "../assets/images/10.jpg"},
+    { "id": 11, "name": "Hilton Capital Grand", "place": "Abu Dhabi", "link": "../assets/images/11.jpg"},
+    { "id": 12, "name": "Armani Hotel", "place": "Dubai", "link": "../assets/images/12.jpg"}
+]

@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-4" id="tnail" *ngFor="let hotel of hotels">
+      <img class="img-responsive img-thumbnail" src= {{path}}{{hotel.id}}.jpg  [title]='hotel.name' alt={{hotel.name}}/>
+      <a (click)='getHotel(hotel)'>
+        <div class="text-block">
+          <h5>{{hotel.name}}</h5>
+          <h6>{{hotel.place}}</h6>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
