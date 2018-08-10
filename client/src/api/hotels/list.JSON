@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Atlantis",
+        "place": "Palm Jumeira"
+    },
+    {
+        "id": 2,
+        "name": "Burj Khalifa",
+        "place": "Bur Dubai"
+    },
+    {
+        "id": 3,
+        "name": "Burj Al Arab",
+        "place": "Palm Beach"
+    },
+    {
+        "id": 4,
+        "name": "Emirates Palace",
+        "place": "Abu Dhabi"
+    },
+    {
+        "id": 5,
+        "name": "Al Mahal",
+        "place": "Murqquoab"
+    },
+    {
+        "id": 6,
+        "name": "Le Royal Meridien",
+        "place": "Dubai"
+    },
+    {
+        "id": 7,
+        "name": "The Oberoi",
+        "place": "Dubai"
+    },
+    {
+        "id": 8,
+        "name": "Qasr Al Sahab",
+        "place": "UAE"
+    },
+    {
+        "id": 9,
+        "name": "Waldorf Astoria",
+        "place": "Ras Al Khaima"
+    },
+    {
+        "id": 10,
+        "name": "Al Etihad Towers",
+        "place": "Jumeira"
+    },
+    {
+        "id": 11,
+        "name": "Hilton Capital Grand",
+        "place": "Abu Dhabi"
+    },
+    {
+        "id": 12,
+        "name": "Armani Hotel",
+        "place": "Dubai"
+    }
+]

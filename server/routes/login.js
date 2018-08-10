@@ -13,7 +13,7 @@ module.exports = {
 app.use(bodyParser.urlencoded({ extended: true }));
 
 function index(req, res, next) {
-    var Logincollection = db.getDB().collection('login');
+    var Logincollection = db.getDB().db('user').collection('login');
     Logincollection.find({ "email": req.body.email })
         .toArray(function (err, items) {
             if (err) throw err;

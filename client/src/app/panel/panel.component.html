@@ -5,9 +5,10 @@
     </div>
     <div class="panel-body ">
       <div class="row type">
-        <div class="inline col-sm-4" (click)="room(1);">Single</div>
-        <div class="inline col-sm-4" (click)="room(2);">Double</div>
-        <div class="inline col-sm-4" (click)="room(3);">Suite</div>
+        <div class="inline col-sm-12" id="init" *ngIf="!showrm" (click)="show();">Show rooms</div>
+        <div class="inline col-sm-4" id="single" *ngIf="showrm" (click)="room(1,this.id);">Single</div>
+        <div class="inline col-sm-4" id="double" *ngIf="showrm" (click)="room(2,this.id);">Double</div>
+        <div class="inline col-sm-4" id="suite" *ngIf="showrm" (click)="room(3,this.id);">Suite</div>
       </div>
       <div class="row" id="detail">
         <div class="block col-sm-6" id="roomdetails" *ngIf="id">

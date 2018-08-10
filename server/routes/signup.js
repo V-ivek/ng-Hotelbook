@@ -16,7 +16,7 @@ module.exports = {
 function index(req, res, next) {
 
     var Signupcollection = db.getDB().collection('signup');
-    var Logincollection = db.getDB().collection('login');
+    var Logincollection = db.getDB().db('user').collection('login');
     Signupcollection.find({ "email": req.body.email }).toArray(function (err, items) {
         if (err) throw err;
         else {

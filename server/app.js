@@ -9,18 +9,20 @@ var connection = require('./routes/connection.js');
 let router = express.Router();
 
 
-configDB = require('./configDB')
-home = require('./routes/home');
-signup = require('./routes/signup');
-login = require('./routes/login');
+configDB = require('./configDB.js');
+hotels = require('./routes/hotels.js');
+home = require('./routes/home.js');
+signup = require('./routes/signup.js');
+login = require('./routes/login.js');
 
 var host = configDB.user.host;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use('/', router);
+app.use('/api', router);
 
+router.use("/hotels", hotels.getHotels);
 router.use("/signup", signup.index);
 router.use("/login", login.index);
 

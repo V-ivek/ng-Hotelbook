@@ -15,7 +15,7 @@ function connect(host) {
             throw (err);
         }
         else {
-            db = client.db('user');
+            db = client;
         }
 
     });

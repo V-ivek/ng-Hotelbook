@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HotelService {
 
-  private hotelUrl = './api/hotels/hotels.JSON';
+  private hotelUrl = '/api/hotels';
 
   selectedHotel: Hotel;
 

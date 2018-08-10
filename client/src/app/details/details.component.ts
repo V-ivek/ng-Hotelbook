@@ -22,10 +22,12 @@ import { Hotel } from '../hotel';
 })
 export class DetailsComponent implements OnInit {
   selectedHotel: Hotel;
+  link: string;
+  path = '../assets/images/';
   constructor(private renderer: Renderer2) { }
   change() {
     const parent: HTMLElement = document.getElementById('bg');
-    this.renderer.setStyle(parent, 'background-image', 'url(' + this.selectedHotel.link + ')');
+    this.renderer.setStyle(parent, 'background-image', 'url(' + this.link + ')');
   }
 
 
@@ -37,6 +39,7 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.getSelectedHotel();
+    this.link = JSON.stringify(this.path + this.selectedHotel.id + '.jpg');
     this.change();
   }
 
