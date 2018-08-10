@@ -29,7 +29,7 @@
 
 .panel-group .panel {
     margin-bottom: 0;
-    border: 5px solid black;
+    border: 0.5rem solid black;
     height: 100%;
     width: 70%;
     border-radius: 1.5rem;
@@ -59,13 +59,27 @@ div.inline:active{
 }
 
 
+#roomdetails > img:nth-child(1) {
+ height: 100%;
+ width: 100%;
+ background-color: rgba(0, 0, 0, 0.95);
+ border-bottom-right-radius: 1rem;
+ border-bottom-left-radius: 1rem;
+ border-top: 0.5rem solid black;
+border-top-right-radius: 1.5rem;
+border-top-left-radius: 1.5rem;
+}
+
 
 #roomdetails {
     margin-bottom:0rem;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.95);
     border-bottom-left-radius: 1rem;
     border-right: 0.4rem solid rgba(0,0,0,0.95);
+    padding: 0px 0px;
+
 }
 
 #detail {

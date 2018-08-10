@@ -5,29 +5,31 @@
     </div>
     <div class="panel-body ">
       <div class="row type">
-        <div class="inline col-sm-12" id="init" *ngIf="!showrm" (click)="show();">Show rooms</div>
-        <div class="inline col-sm-4" id="single" *ngIf="showrm" (click)="room(1,this.id);">Single</div>
-        <div class="inline col-sm-4" id="double" *ngIf="showrm" (click)="room(2,this.id);">Double</div>
-        <div class="inline col-sm-4" id="suite" *ngIf="showrm" (click)="room(3,this.id);">Suite</div>
+        <div class="inline col-sm-12" id="init" *ngIf="!showrm" (click)="show()">Show rooms</div>
+        <div class="inline col-sm-4" id="single" *ngIf="showrm" (click)="room(1,this.id)">Single</div>
+        <div class="inline col-sm-4" id="double" *ngIf="showrm" (click)="room(2,this.id)">Double</div>
+        <div class="inline col-sm-4" id="suite" *ngIf="showrm" (click)="room(3,this.id)">Suite</div>
       </div>
       <div class="row" id="detail">
         <div class="block col-sm-6" id="roomdetails" *ngIf="id">
-
+          <img class="img-responsive" [src]="link">
         </div>
-        <div class="block col-sm-6" id="details" *ngIf="id" >
-          <p *ngIf="id===1" >
-            <strong>Room Description-</strong>Single rooms is a bright and cosy room featuring cable TV, a work desk and a private
-            bathroom with shower. Room Facilities: City view, TV, Telephone, Cable channels, Desk, Sitting area, Hardwood/Parquet
-            floors, Shower, Toilet, Bathroom, Wake-up service.</p>
-          <p *ngIf="id===2">
-            <strong>Room Description-</strong> Standard double rooms are meant for a couple; these have just one queen- or king-sized
-            bed. Other standard double rooms have two double or queen-sized beds placed side by side a few feet apart. Sometimes
-            families of four with young children who can share a bed opt for the two beds.</p>
-          <p *ngIf="id===3">
-            <strong>Room Description-</strong>The Suites have well ventilated large air-conditioned bedrooms with attached bathroom
-            facing the garden. The air conditioned living rooms are fitted with double sofa cum bed which allows a total
-            occupany of 4 in the suite. All suites have balcony and a well- equipped open kitchenette. Ideal for couples,
-            corporate guests and luxury travellers</p>
+        <div class="block col-sm-6" id="details" *ngIf="id">
+          <div>
+            <p *ngIf="id===1">
+              <strong>Room Description-</strong>Single rooms is a bright and cosy room featuring cable TV, a work desk and a private
+              bathroom with shower. Room Facilities: City view, TV, Telephone, Cable channels, Desk, Sitting area, Hardwood/Parquet
+              floors, Shower, Toilet, Bathroom, Wake-up service.</p>
+            <p *ngIf="id===2">
+              <strong>Room Description-</strong> Standard double rooms are meant for a couple; these have just one queen- or king-sized
+              bed. Other standard double rooms have two double or queen-sized beds placed side by side a few feet apart.
+              Sometimes families of four with young children who can share a bed opt for the two beds.</p>
+            <p *ngIf="id===3">
+              <strong>Room Description-</strong>The Suites have well ventilated large air-conditioned bedrooms with attached bathroom
+              facing the garden. The air conditioned living rooms are fitted with double sofa cum bed which allows a total
+              occupany of 4 in the suite. All suites have balcony and a well- equipped open kitchenette. Ideal for couples,
+              corporate guests and luxury travellers</p>
+          </div>
           <div class="bttn">
             <button type="button" class="btn btn-dark">Book Now</button>
           </div>

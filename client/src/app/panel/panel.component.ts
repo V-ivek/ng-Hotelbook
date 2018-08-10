@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, Input } from '@angular/core';
 import { Hotel } from '../hotel';
 
 @Component({
@@ -8,8 +8,9 @@ import { Hotel } from '../hotel';
 })
 export class PanelComponent implements OnInit {
   selectedHotel: Hotel;
-  id: number;
+  @Input() id: number;
   showrm = false;
+  link: string;
 
   constructor(private renderer: Renderer2) { }
 
@@ -23,21 +24,12 @@ export class PanelComponent implements OnInit {
     } else {
       this.id = id;
       if (id === 1) {
-        const room: HTMLElement = document.getElementById('roomdetails');
-        const select: HTMLElement = document.getElementById(rid);
-        this.renderer.setStyle(room, 'background-image', 'url("../../assets/images/single.jpg")');
-
+        this.link = '../../assets/images/single.jpg';
       } else if (id === 2) {
-        const room: HTMLElement = document.getElementById('roomdetails');
-        const select: HTMLElement = document.getElementById('rid');
-        this.renderer.setStyle(room, 'background-image', 'url("../../assets/images/double.jpg")');
+        this.link = '../../assets/images/double.jpg';
       } else if (id === 3) {
-        const room: HTMLElement = document.getElementById('roomdetails');
-        const select: HTMLElement = document.getElementById('rid');
-        this.renderer.setStyle(room, 'background-image', 'url("../../assets/images/suite.jpg")');
+        this.link = '../../assets/images/suite.jpg';
       }
-      const detail: HTMLElement = document.getElementById('detail');
-      this.renderer.setStyle(detail, 'background-color', 'black');
     }
   }
 
