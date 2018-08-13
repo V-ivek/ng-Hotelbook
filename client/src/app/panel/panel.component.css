@@ -10,7 +10,7 @@
     border-top-left-radius: 0.5rem;
     text-align: center;
     border-top-right-radius: 0.5rem;
-    background-color: black !important;
+    background-color: rgba(0, 0, 0, 0.95) !important;
     color: white !important;
     z-index: 10;
     height: 10%;
@@ -53,10 +53,6 @@ div.inline:hover{
     cursor: pointer;
 }
 
-
-div.inline:active{
-    opacity:1;
-}
 
 
 #roomdetails > img:nth-child(1) {
