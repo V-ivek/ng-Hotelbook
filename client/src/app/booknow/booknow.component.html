@@ -1,0 +1,64 @@
+<div id="body" class="align-items-center">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class=" col-sm-10 justify-content-center align-items-center">
+        <div class="col-sm-10" id="hdr">
+          <div class="row justify-content-center align-items-center">
+            <strong>Book Now</strong>
+          </div>
+        </div>
+        <form class="col-sm-10" (ngSubmit)="onSubmit(Form.value)" #Form="ngForm">
+          <div class="form-group ">
+            <label for="formGroupExampleInput">
+              <strong>Name</strong>
+            </label>
+            <input type="text" name="name" class="form-control" id="name-input" required ngModel>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">
+              <p>
+                <strong>Email</strong>
+              </p>
+            </label>
+            <input type="email" name="email" class="form-control" id="email-input" required ngModel>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">
+              <strong>Telephone</strong>
+            </label>
+            <input type="integer" name="tel" class="form-control" id="tel-input" required ngModel>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">
+              <strong>Hotel name</strong>
+            </label>
+            <input type="text" name="hotelname" class="form-control" id="hotelname" required ngModel>
+          </div>
+          <div class="col-sm-12 form-group" id="htdet">
+            <div class="col-sm-4">
+              <label>Roomtype</label>
+              <select name="eoomtype">
+                <option value="single">Single</option>
+                <option value="souble">Double</option>
+                <option value="suite">Suite</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <label>Check in</label>
+              <input type="date" name="checkin" id="checkin" required ngModel>
+            </div>
+            <div class="col-sm-4">
+              <label>Check out</label>
+              <input type="date" name="checkout" id="checkout" required ngModel>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row justify-content-center">
+              <button type="button" class="btn btn-dark" id="but" type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

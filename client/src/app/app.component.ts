@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -9,5 +9,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'hotel-book';
+  logged: false ;
+  user = JSON.parse(sessionStorage.getItem('User'));
 
+  getLogged(logged) {
+    this.logged = logged;
+  }
 }

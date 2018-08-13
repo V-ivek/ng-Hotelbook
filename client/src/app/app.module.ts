@@ -12,6 +12,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { DetailsComponent } from './details/details.component';
 import { PanelComponent } from './panel/panel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BooknowComponent } from './booknow/booknow.component';
 
 
 
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     DetailsComponent,
     PanelComponent,
+    BooknowComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
       { path: 'browse', component: BrowseComponent },
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
+      { path: 'booknow', component: BooknowComponent },
       { path: 'details', component: DetailsComponent }
     ])
   ],

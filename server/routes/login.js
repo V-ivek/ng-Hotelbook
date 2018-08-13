@@ -13,7 +13,7 @@ module.exports = {
 app.use(bodyParser.urlencoded({ extended: true }));
 
 function index(req, res, next) {
-    var Logincollection = db.getDB().db('user').collection('login');
+    var Logincollection = db.getDB().db('user').collection('signup');
     Logincollection.find({ "email": req.body.email })
         .toArray(function (err, items) {
             if (err) throw err;
@@ -25,7 +25,7 @@ function index(req, res, next) {
                 else {
                     if (items[0].pass === req.body.pass) {
                         console.log("Login Success");
-                        res.status(200).send("Login Successfull");
+                        res.status(200).send(items[0]);
                     }
                     else {
                         console.log("Login Failed due to incorrect password")

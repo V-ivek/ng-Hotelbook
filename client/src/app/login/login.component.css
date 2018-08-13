@@ -19,6 +19,22 @@ form.col-sm-10 {
     padding-bottom: 0px;
 }
 
+#login {
+    margin: 0 auto;
+    height: 13rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 23em; 
+    padding: 0em 1em;
+    border: 0.4vh solid rgb(29, 29, 29);
+    border-top: 0px;
+    border-radius: 3%;
+    border-top-left-radius: 0% !important;
+    border-top-right-radius: 0% !important;
+    background-color: rgba( 0 , 0 , 0 , 0.60 );
+}
+
 #hdr {
     margin: 0 auto;
     width: 23em;

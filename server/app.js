@@ -11,6 +11,7 @@ let router = express.Router();
 
 configDB = require('./configDB.js');
 hotels = require('./routes/hotels.js');
+hotelbooking = require('./routes/hotelbooking.js');
 home = require('./routes/home.js');
 signup = require('./routes/signup.js');
 login = require('./routes/login.js');
@@ -23,6 +24,7 @@ app.use(bodyParser.json());
 app.use('/api', router);
 
 router.use("/hotels", hotels.getHotels);
+router.use("/hotelbooking", hotelbooking.index);
 router.use("/signup", signup.index);
 router.use("/login", login.index);
 

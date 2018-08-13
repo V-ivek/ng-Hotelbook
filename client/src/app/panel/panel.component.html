@@ -31,12 +31,74 @@
               corporate guests and luxury travellers</p>
           </div>
           <div class="bttn">
-            <button type="button" class="btn btn-dark">Book Now</button>
+            <button type="button" class="btn btn-dark" (click)="book()">Book Now</button>
           </div>
         </div>
-        <div class="block col-sm-12" id="select" *ngIf="!id">
+        <div *ngIf="showbook" id="book">
+          <div class="justify-content-center align-items-center "*ngIf=(submitted)>Booked Successfully!</div>
+          <form class="col-sm-10" (ngSubmit)="onSubmit(Form.value)" *ngIf=(!submitted) #Form="ngForm">
+            <div class="col-sm-12 form-group" id="htdet">
+              <div class="form-group col-sm-12">
+                <label for="formGroupExampleInput">
+                  <strong>Name</strong>
+                </label>
+                <div>
+                  <input type="text" name="name" class="form-control" id="name-input" required ngModel>
+                </div>
+              </div>
 
+            </div>
+            <div class="col-sm-12 form-group" id="htdet">
+              <div class="form-group col-sm-6">
+                <label for="formGroupExampleInput">
+                  <strong>Email</strong>
+                </label>
+                <div class="justify-content-center">
+                  <input type="email" name="email" class="form-control" id="email-input" required ngModel>
+                </div>
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="formGroupExampleInput">
+                  <strong>Telephone</strong>
+                </label>
+                <div class="justify-content-center">
+                  <input type="integer" name="tel" class="form-control" id="tel-input" required ngModel>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="formGroupExampleInput2">
+                <p>
+                  <strong>Email</strong>
+                </p>
+              </label>
+              <div id="htdet" class="col-sm-12">
+              <input type="email" name="email" class="form-control" id="email-input" required ngModel>
+              </div>
+            </div> -->
+            <div class="col-sm-12 form-group" id="htdet">
+              <div class="col-sm-6">
+                <label>Check in</label>
+                <div class="justify-content-center">
+                  <input type="date" name="checkin" id="checkin" required ngModel>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <label>Check out</label>
+                <div class="justify-content-center">
+                  <input type="date" name="checkout" id="checkout" required ngModel>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row justify-content-center">
+                <button type="button" class="btn btn-dark" id="but" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
         </div>
+
       </div>
     </div>
   </div>

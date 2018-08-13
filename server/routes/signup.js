@@ -15,8 +15,8 @@ module.exports = {
 
 function index(req, res, next) {
 
-    var Signupcollection = db.getDB().collection('signup');
-    var Logincollection = db.getDB().db('user').collection('login');
+    var Signupcollection = db.getDB().db('user').collection('signup');
+    console.log("Signup accesed.--");
     Signupcollection.find({ "email": req.body.email }).toArray(function (err, items) {
         if (err) throw err;
         else {
@@ -27,8 +27,7 @@ function index(req, res, next) {
                     "tel": req.body.tel,
                     "pass": req.body.pass
                 })
-                Logincollection.insert({ "email": req.body.email, "pass": req.body.pass });
-                res.status(200).send("Your account has been registered successfully " + req.body.email);
+                res.status(200).send(items[0]);
                 console.log("Signup successfull \n --")
                 Signupcollection.find({ "name": req.body.name })
                     .toArray(function (err, result) {

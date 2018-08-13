@@ -8,7 +8,10 @@ function getHotels(req, res) {
     var Hotelscollection = dbs.collection('Hotellists');
     Hotelscollection.find({}).toArray(function (err, result) {
         if (err) throw err;
-        else res.send(result);
+        else {
+            console.log("Fetching Hotel Details...");
+            res.send(result);
+        }
     });
 }
 
