@@ -40,7 +40,7 @@
             <label for="formGroupExampleInput">
               <strong>Telephone</strong>
             </label>
-            <input type="integer" class="form-control" required [(ngModel)]="model.mobile" name="tel" pattern="[0-9]*" minlength="10"
+            <input type="integer" class="form-control" required [(ngModel)]="model.tel" name="tel" pattern="[0-9]*" minlength="10"
               maxlength="10" #tel="ngModel">
               <div [hidden]="tel.valid || tel.pristine" class="alert alert-danger">
                 <div [hidden]="!tel.touched||!tel.hasError('minlength')">*Mobile should be 10digit</div>

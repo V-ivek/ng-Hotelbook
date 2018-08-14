@@ -17,12 +17,85 @@ nav {
 #usr {
     justify-content: flex-end;
     display: flex;
+    opacity: 0.9;
 }
-.nav-link {
+.dropdown-content > a:nth-child(3) {
 cursor: pointer;
 }
 
 .fa {
     padding: 0.2rem;
 
+}
+
+.dropdown {
+    float: left;
+    overflow: inherit;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+button span {
+    color: rgb(255, 255, 255);
+    border: 3px solid rgb( 20 , 20 , 20 );
+    padding : 0.5rem 0.5rem;
+    background:linear-gradient( rgb( 20 , 20 , 20 ),rgb( 50 , 50 , 50 ),rgb( 20 , 20 , 20 ));
+    border-radius: 0.5rem;
+}
+
+button:hover {
+    color: rgb(255, 255, 255);
+    background:linear-gradient( rgb( 2 , 2 , 2 ),rgb( 2 , 2 , 2 )) !important;
+}
+
+
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.nav-link {
+    width: -moz-max-content;
+}
+
+.dropbtn:hover {
+    cursor: pointer;
 }
