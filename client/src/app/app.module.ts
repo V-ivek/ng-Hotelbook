@@ -13,6 +13,7 @@ import { DetailsComponent } from './details/details.component';
 import { PanelComponent } from './panel/panel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BooknowComponent } from './booknow/booknow.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -36,6 +37,7 @@ import { BooknowComponent } from './booknow/booknow.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: 'welcome', component: WelcomeComponent },

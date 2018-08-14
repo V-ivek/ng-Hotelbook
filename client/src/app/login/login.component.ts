@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { UserDetails } from '../user-details';
 import { RegistrationService } from '../registration.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,11 +13,12 @@ export class LoginComponent implements OnInit {
   model = new UserDetails('Hawkeye', 'example@mail.com', 12345, 'password');
   submitted = false;
   login = false;
-  @Output() Logged = new EventEmitter<any>();
+  @Output() Logged = new EventEmitter<string>();
 
-  constructor(private loginService: RegistrationService) { }
-  onLogged(): void {
-    this.Logged.emit(true);
+  constructor(private loginService: RegistrationService, private router: Router) { }
+  onLogged(info: string): void {
+    console.log(info);
+    this.Logged.emit(info);
   }
 
 
@@ -32,9 +35,13 @@ export class LoginComponent implements OnInit {
           'pass': data.pass
         };
         console.log(data);
+        this.onLogged('true');
+        console.log(this.Logged);
         sessionStorage.setItem('User', JSON.stringify(this.model));
         sessionStorage.setItem('login' , 'true' );
-        this.onLogged();
+        // this.router.navigate(routes ,['/welcome', '#']);
+        // window.location.reload();
+        window.location.href = '/welcome';
       },
       err => console.log(err));
   }

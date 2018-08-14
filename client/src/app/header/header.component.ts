@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   logout(): void {
     this.user = '';
     sessionStorage.removeItem('User');
+    window.location.href = '/welcome';
 
   }
 

@@ -21,9 +21,7 @@ form.col-sm-10 {
     padding-bottom: 0px;
 }
 
-.col-sm-10 > div:nth-child(2) {
-    padding: 0 1rem;
-}
+
 
 
 #login {
