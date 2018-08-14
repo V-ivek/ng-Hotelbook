@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 // import { HttpClient, HttpHeaders, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, of, } from 'rxjs';
 import { UserDetails } from '../user-details';
@@ -11,14 +11,12 @@ import { RegistrationService } from '../registration.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
-  model = new UserDetails('Hawkeye', 'example@mail.com', 12345, 'password');
+export class SignupComponent implements OnInit, OnChanges {
+  model = new UserDetails('Hawkeye', 'example@mail.com', 1234512345, 'password');
   submitted = false;
   signup = false;
   signuperr = false;
   error: any;
-
-
 
   constructor(private signupService: RegistrationService) { }
 
@@ -52,5 +50,9 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnChanges() {
+  }
+
 
 }

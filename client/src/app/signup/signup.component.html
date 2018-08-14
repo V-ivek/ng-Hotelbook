@@ -12,24 +12,44 @@
             <label for="formGroupExampleInput">
               <strong>Name</strong>
             </label>
-            <input type="text" name="name" [(ngModel)]="model.name" class="form-control" id="name-input" required ngModel>
+            <input type="text" name="name" [(ngModel)]="model.name" pattern="[a-zA-Z][a-zA-Z ]+" #name="ngModel" class="form-control"
+              id="name-input" required ngModel>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+              <div [hidden]="!name.hasError('required')">*Name is required</div>
+              <div [hidden]="!name.hasError('pattern')">*Only alphabetsallowed</div>
+            </div>
           </div>
           <!-- <div class="valid-feedback">
             Looks good!
           </div> -->
           <div class="form-group">
             <label for="formGroupExampleInput2">
-              <p><strong>Email</strong></p>
+              <p>
+                <strong>Email</strong>
+              </p>
             </label>
-            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control" id="email-input"
-              required ngModel>{{model.email}}
-
+            <input type="email" name="email" class="form-control" id="email-input" required [(ngModel)]="model.email"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+              #email="ngModel">
+            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+              <div [hidden]="!email.hasError('required')">*Email is required</div>
+              <div [hidden]="!email.hasError('pattern')">*Email format should be
+                <small>
+                  <b>hawkeye@pochinki.com</b>
+                </small>
+              </div>
+            </div>
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput">
               <strong>Telephone</strong>
             </label>
-            <input type="integer" name="tel" class="form-control" id="tel-input" required ngModel>
+            <input type="integer" class="form-control" required [(ngModel)]="model.mobile" name="tel" pattern="[0-9]*" minlength="10"
+              maxlength="10" #tel="ngModel">
+            <div [hidden]="tel.valid || tel.pristine" class="alert alert-danger">
+              <div [hidden]="!tel.touched||!tel.hasError('minlength')">*Mobile should be 10digit</div>
+              <div [hidden]="!tel.touched||!tel.hasError('required')">*Mobile is required</div>
+              <div [hidden]="!tel.touched||!tel.hasError('pattern')">*Mobile numberr should be only numbers</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput">
@@ -45,7 +65,7 @@
           </div>
           <div class="form-group">
             <div class="row justify-content-center" *ngIf=(!signup)>
-              <button type="button" class="btn btn-dark" id="but" type="submit">Submit</button>
+              <button type="button" class="btn btn-dark" id="but" type="submit" [disabled]="!signupForm.form.valid">Submit</button>
             </div>
             <div id="signup" *ngIf=(signup)>
               Signup Successfull, Welcome {{model.name}}!
@@ -55,7 +75,7 @@
             </div>
           </div>
         </form>
-        
+
       </div>
     </div>
   </div>

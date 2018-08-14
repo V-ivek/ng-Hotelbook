@@ -9,12 +9,14 @@
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/booknow']">Book Now</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/login']">Login</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/signup']">Signup</a>
-    </li>
+    <div id="usr" style="width: 90%;">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/signup']">Signup</a>
+      </li>
+    </div>
   </ul>
 </nav>
 
@@ -33,9 +35,9 @@
     <li class="nav-item">
       <a class="nav-link" (click)="logout()">Logout</a>
     </li>
-    <div id="usr">
+    <div id="usr" style="width: 86%;">
       <li class="nav-item">
-        <a class="nav-link" href='#'>Welcome, {{user.name}}  
+        <a class="nav-link" href='#'>Welcome, {{user.name}}
           <i class="fa fa-user"></i>
         </a>
       </li>

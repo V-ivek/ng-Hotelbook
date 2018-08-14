@@ -46,19 +46,6 @@ form.col-sm-10 {
     justify-content: center;
 }
 
-#hdr {
-    margin: 0 auto;
-    width: 23em;
-    height: 4rem; 
-    padding: 0em 1em;
-    border: 0.4vh solid rgb(29, 29, 29);
-    border-bottom: 0px;
-    border-top-left-radius: 3% !important;
-    border-top-right-radius: 3% !important;
-    background-color: rgb( 0 , 0 , 0 );
-    padding-bottom: 0px;
-}
-
 
 #hdr > div:nth-child(1) {
     height: inherit;
@@ -70,10 +57,9 @@ form.col-sm-10 {
     height: 4rem; 
     padding: 0em 1em;
     border: 0.23rem solid rgb(29, 29, 29);
-    border-bottom: 0px;
     border-top-left-radius: 3% !important;
     border-top-right-radius: 3% !important;
-    background-color: rgba( 0 , 0 , 0, 0.9 );
+    background:linear-gradient( rgb( 0 , 0 , 0 ),rgb( 20 , 20 , 20 ),rgb( 0 , 0 , 0 ));
     padding-bottom: 0px;
 }
 

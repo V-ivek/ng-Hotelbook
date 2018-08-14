@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   submitted = false;
   login = false;
   @Output() Logged = new EventEmitter<string>();
+  loginerr = false;
+  error: any;
 
   constructor(private loginService: RegistrationService, private router: Router) { }
   onLogged(info: string): void {
@@ -43,7 +45,12 @@ export class LoginComponent implements OnInit {
         // window.location.reload();
         window.location.href = '/welcome';
       },
-      err => console.log(err));
+      err => {
+        this.loginerr = true;
+        this.error = err.error;
+        console.log(err.error);
+      }
+    );
   }
 
 

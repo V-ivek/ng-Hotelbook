@@ -1,7 +1,7 @@
 body {
     height: 5vh;
     text-align: center;
-    background-color: rgb(0, 0, 0 , 0.95) !important;
+    background:linear-gradient( rgb( 0 , 0 , 0 ),rgb( 20 , 20 , 20 ),rgb( 0 , 0 , 0 )) !important;
     color: #dedede !important;
     border-top: 0.4vh solid rgb(29, 29, 29);
 
