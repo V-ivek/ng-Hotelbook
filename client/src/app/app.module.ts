@@ -12,7 +12,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { DetailsComponent } from './details/details.component';
 import { PanelComponent } from './panel/panel.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BooknowComponent } from './booknow/booknow.component';
+import { BookNowComponent } from './booknow/booknow.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -31,7 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     DetailsComponent,
     PanelComponent,
-    BooknowComponent,
+    BookNowComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,7 @@ import { ReactiveFormsModule } from '@angular/forms';
       { path: 'browse', component: BrowseComponent },
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
-      { path: 'booknow', component: BooknowComponent },
+      { path: 'booknow', component: BookNowComponent },
       { path: 'details', component: DetailsComponent }
     ])
   ],

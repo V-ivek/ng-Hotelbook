@@ -9,7 +9,7 @@ import { UserDetails } from '../user-details';
   templateUrl: './booknow.component.html',
   styleUrls: ['./booknow.component.css']
 })
-export class BooknowComponent implements OnInit {
+export class BookNowComponent implements OnInit {
   submitted: boolean;
   // tslint:disable-next-line:max-line-length
   model = new Hotelbooking('Hawkeye',

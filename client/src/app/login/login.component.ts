@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   @Output() Logged = new EventEmitter<string>();
   loginerr = false;
   error: any;
+  // emailpattern:  RegExp = (^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$);
 
   constructor(private loginService: RegistrationService, private router: Router) { }
   onLogged(info: string): void {
@@ -37,6 +38,7 @@ export class LoginComponent implements OnInit {
           'pass': data.pass
         };
         console.log(data);
+        this.login = true;
         this.onLogged('true');
         console.log(this.Logged);
         sessionStorage.setItem('User', JSON.stringify(this.model));

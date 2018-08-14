@@ -18,14 +18,14 @@ nav {
     justify-content: flex-end;
     display: flex;
     opacity: 0.9;
+    width: inherit;
 }
 .dropdown-content > a:nth-child(3) {
 cursor: pointer;
 }
 
-.fa {
+    .fa {
     padding: 0.2rem;
-
 }
 
 .dropdown {
