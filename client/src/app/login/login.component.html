@@ -13,10 +13,10 @@
               <strong>Email</strong>
             </label>
             <input type="email" name="email" class="form-control" id="email-input" required formControlName="email" placeholder="Your email">
-            <div *ngIf="loginForm.get('email').hasError('required')">
+            <div class="error" *ngIf="loginForm.get('email').hasError('required')">
               Oops, please provide a name!
             </div>
-            <div *ngIf="loginForm.controls.email.hasError('pattern')">
+            <div class="error" *ngIf="loginForm.controls.email.hasError('pattern')">
               Oops, wrong pattern buddy!
             </div>
           </div>

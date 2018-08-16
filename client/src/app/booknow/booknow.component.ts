@@ -11,7 +11,6 @@ import { UserDetails } from '../user-details';
 })
 export class BookNowComponent implements OnInit {
   submitted: boolean;
-  // tslint:disable-next-line:max-line-length
   model = new Hotelbooking('Hawkeye',
                             'example@mail.com',
                              1234512345,

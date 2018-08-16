@@ -13,10 +13,10 @@
               <strong>Name</strong>
             </label>
             <input type="text" name="name" class="form-control" id="name-input" formControlName="name" placeholder="Your name" required>
-            <div *ngIf="signupForm.get('name').hasError('required')">
+            <div class="error" *ngIf="signupForm.get('name').hasError('required')">
               Oops, please provide a name!
             </div>
-            <div *ngIf="signupForm.controls.name.hasError('pattern')">
+            <div class="error" *ngIf="signupForm.controls.name.hasError('pattern')">
               Oops, wrong format buddy!
             </div>
           </div>
@@ -27,10 +27,10 @@
               </p>
             </label>
             <input type="email" name="email" class="form-control" id="email-input" formControlName="email" placeholder="Your email" required>
-            <div *ngIf="signupForm.get('email').hasError('required')">
+            <div class="error" *ngIf="signupForm.get('email').hasError('required')">
               Oops, please provide an email!
             </div>
-            <div *ngIf="signupForm.controls.email.hasError('pattern')">
+            <div class="error" *ngIf="signupForm.controls.email.hasError('pattern')">
               Oops, wrong format buddy!
             </div>
           </div>
@@ -39,10 +39,10 @@
               <strong>Telephone</strong>
             </label>
             <input type="integer" class="form-control" formControlName="tel" placeholder="Your mobile no." name="tel" required>
-            <div *ngIf="signupForm.get('tel').hasError('required')">
+            <div class="error" *ngIf="signupForm.get('tel').hasError('required')">
               Oops, please provide a mobile number!
             </div>
-            <div *ngIf="signupForm.controls.tel.hasError('pattern')">
+            <div class="error" *ngIf="signupForm.controls.tel.hasError('pattern')">
               Oops, wrong format buddy!
             </div>
           </div>
@@ -57,7 +57,7 @@
               <strong>Confirm Password</strong>
             </label>
             <input type="password" name="confirm-pass" formControlName="confirmPass" class="form-control" id="confirm-pass-input" required>
-            <div *ngIf="signupForm.controls.confirmPass.errors?.MatchPassword">Password not match</div>
+            <div class="error" *ngIf="signupForm.controls.confirmPass.errors?.MatchPassword">Password not match</div>
           </div>
           <div class="form-group">
             <div class="row justify-content-center" *ngIf=(!signup)>

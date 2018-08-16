@@ -141,6 +141,15 @@ div .bttn {
     justify-content: center;
 }
 
-button.btn {
+#booked {
+    height: auto;
+    height: 3rem;
+    align-self: center;
+    display: flex;
+}
+
+.error {
+    font-size: 0.9rem;
+    color: red;
 }
 

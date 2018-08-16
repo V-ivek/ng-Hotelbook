@@ -36,12 +36,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(form.value).subscribe(
       data => {
         this.login = true;
-        this.model = {
-          'name': data.name,
-          'email': data.email,
-          'tel': data.tel,
-          'pass': data.pass
-        };
+        this.model = data;
         console.log(data);
         this.login = true;
         this.onLogged('true');
