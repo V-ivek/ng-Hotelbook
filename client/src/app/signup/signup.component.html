@@ -38,8 +38,7 @@
             <label for="formGroupExampleInput">
               <strong>Telephone</strong>
             </label>
-            <input type="integer" class="form-control" formControlName="tel" placeholder="Your mobile no." name="tel" 
-               required>
+            <input type="integer" class="form-control" formControlName="tel" placeholder="Your mobile no." name="tel" required>
             <div *ngIf="signupForm.get('tel').hasError('required')">
               Oops, please provide a mobile number!
             </div>
@@ -57,7 +56,8 @@
             <label for="formGroupExampleInput">
               <strong>Confirm Password</strong>
             </label>
-            <input type="password" name="confirm-pass" formControlName="confirmpass" class="form-control" id="confirm-pass-input" required>
+            <input type="password" name="confirm-pass" formControlName="confirmPass" class="form-control" id="confirm-pass-input" required>
+            <div *ngIf="signupForm.controls.confirmPass.errors?.MatchPassword">Password not match</div>
           </div>
           <div class="form-group">
             <div class="row justify-content-center" *ngIf=(!signup)>

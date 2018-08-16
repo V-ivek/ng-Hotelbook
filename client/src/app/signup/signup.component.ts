@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-// import { HttpClient, HttpHeaders, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { PasswordValidation } from '../password-validation';
 import { Observable, of, } from 'rxjs';
 import { UserDetails } from '../user-details';
 import { tap, catchError } from 'rxjs/operators';
@@ -59,8 +59,10 @@ export class SignupComponent implements OnInit, OnChanges {
       email: ['email@example.com', [Validators.required, Validators.pattern(this.emailPattern)]],
       tel: ['1234567890', [Validators.required, Validators.pattern(this.telPattern)]],
       pass: ['', [Validators.required]],
-      confirmpass: ['', [Validators.required]]
-    });
+      confirmPass: ['', [Validators.required]]
+    }, {
+        validator: PasswordValidation.MatchPassword // your validation method
+      });
   }
 
   ngOnChanges() {
