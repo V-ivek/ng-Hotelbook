@@ -1,8 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { UserDetails } from '../user-details';
 import { RegistrationService } from '../registration.service';
-import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   model = new UserDetails('Hawkeye', 'example@mail.com', 12345, 'password');
+  loginForm: FormGroup;
+  // tslint:disable-next-line:max-line-length
+  emailPattern: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   submitted = false;
   login = false;
   @Output() Logged = new EventEmitter<string>();
@@ -18,7 +21,7 @@ export class LoginComponent implements OnInit {
   error: any;
   // emailpattern:  RegExp = (^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$);
 
-  constructor(private loginService: RegistrationService, private router: Router) { }
+  constructor(private loginService: RegistrationService, private router: Router, private fb: FormBuilder) { }
   onLogged(info: string): void {
     console.log(info);
     this.Logged.emit(info);
@@ -26,9 +29,11 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(form) {
+    console.log('Valid?', form.valid); // true or false
+    console.log('Email', form.value.email);
+    console.log('Password', form.value.pass);
     this.submitted = true;
-    console.log('model.name = ' + this.model.email + ' form.name = ' + form.email);
-    this.loginService.login(form).subscribe(
+    this.loginService.login(form.value).subscribe(
       data => {
         this.login = true;
         this.model = {
@@ -43,8 +48,8 @@ export class LoginComponent implements OnInit {
         console.log(this.Logged);
         sessionStorage.setItem('User', JSON.stringify(this.model));
         sessionStorage.setItem('login' , 'true' );
-        // this.router.navigate(routes ,['/welcome', '#']);
-        // window.location.reload();
+    //     // this.router.navigate(routes ,['/welcome', '#']);
+    //     // window.location.reload();
         window.location.href = '/welcome';
       },
       err => {
@@ -56,11 +61,14 @@ export class LoginComponent implements OnInit {
   }
 
 
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
 
 
   ngOnInit() {
+    this.loginForm = this.fb.group({
+      // tslint:disable-next-line:max-line-length
+      email: ['email@example.com', [Validators.required, Validators.pattern(this.emailPattern)]],
+      pass: ['', [ Validators.required]]
+    });
   }
 
 }

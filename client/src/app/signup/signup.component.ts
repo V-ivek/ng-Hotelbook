@@ -3,6 +3,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { Observable, of, } from 'rxjs';
 import { UserDetails } from '../user-details';
 import { tap, catchError } from 'rxjs/operators';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { RegistrationService } from '../registration.service';
 
 
@@ -17,14 +18,18 @@ export class SignupComponent implements OnInit, OnChanges {
   signup = false;
   signuperr = false;
   error: any;
+  signupForm: FormGroup;
+  namePattern: RegExp = /^[a-z ,.'-]+$/i;
+  // tslint:disable-next-line:max-line-length
+  emailPattern: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  telPattern: RegExp = /^\d{10}$/;
 
-  constructor(private signupService: RegistrationService) { }
+  constructor(private signupService: RegistrationService, private fb: FormBuilder) { }
 
 
   onSubmit(form) {
      this.submitted = true;
-     console.log('model.name = ' + this.model.name + ' form.name = ' + form.name );
-    this.signupService.signup(form).subscribe(
+    this.signupService.signup(form.value).subscribe(
       data => {
         this.signup = true;
         this.signuperr = false;
@@ -46,9 +51,16 @@ export class SignupComponent implements OnInit, OnChanges {
 
 
   // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
 
   ngOnInit() {
+    this.signupForm = this.fb.group({
+      // tslint:disable-next-line:max-line-length
+      name: ['Vivek', [Validators.required, Validators.pattern(this.namePattern)]],
+      email: ['email@example.com', [Validators.required, Validators.pattern(this.emailPattern)]],
+      tel: ['1234567890', [Validators.required, Validators.pattern(this.telPattern)]],
+      pass: ['', [Validators.required]],
+      confirmpass: ['', [Validators.required]]
+    });
   }
 
   ngOnChanges() {
