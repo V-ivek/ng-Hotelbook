@@ -15,9 +15,9 @@ module.exports = {
 
 function index(req, res, next) {
 
-    var Bookingcollection = db.getDB().db('Hotels').collection('hotelbooking');
+    var Bookingcollection = db.getDB().db('Hotels').collection('Hotelbooking');
     console.log("booking accesed.--");
-    Bookingcollection.insert({
+    Bookingcollection.insertOne({
         "name": req.body.name,
         "email": req.body.email,
         "tel": req.body.tel,
